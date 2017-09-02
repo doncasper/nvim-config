@@ -7,7 +7,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }       " NERDTree
 Plug 'mbbill/undotree'                                                " Local history
 Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
 Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
-Plug 'godoctor/godoctor.vim'                                          " Some refactoring tools
+Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
 Plug 'vim-syntastic/syntastic',                                       " Syntax checking
 Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplite plugin
