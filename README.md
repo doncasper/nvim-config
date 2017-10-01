@@ -53,8 +53,16 @@ If you get error throw installing delve with brew, check [this issue](https://gi
 
 First make sure you have [node](http://nodejs.org/) with [npm](https://www.npmjs.org/) installed.
 
-```
+```sh
 $ npm install -g livedown
+```
+
+* `zchee/deoplete-go`
+
+You need to get the appropriate version of the gocode, for 6g/8g/5g compiler you can do this:
+
+```sh
+$ go get -u github.com/nsf/gocode
 ```
 
 ### Install plugins
@@ -63,4 +71,4 @@ Install plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 
 Open Neovim and call `:PlugInstall` to install pluggins.
 
-
+Then call `:GoInstallBinaries`.
