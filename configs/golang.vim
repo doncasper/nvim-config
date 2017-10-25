@@ -16,6 +16,9 @@ let g:go_term_enabled = 1
 let g:go_list_type = "quickfix"
 let g:go_addtags_transform = "camelcase"
 
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+
 " Vim-go plugin key maping
 nmap <leader>r <Plug>(go-run)
 nmap <leader>b <Plug>(go-build)

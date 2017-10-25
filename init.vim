@@ -8,6 +8,7 @@ Plug 'mbbill/undotree'                                                " Local hi
 Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
 Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
 Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
+Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
 Plug 'vim-syntastic/syntastic',                                       " Syntax checking
 Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplite plugin
@@ -64,7 +65,7 @@ nmap <F9> :UndotreeToggle<CR>
 let g:livedown_autorun = 0 " should markdown preview get shown automatically upon opening markdown buffer
 let g:livedown_open = 1    " should the browser window pop-up upon previewing
 let g:livedown_port = 1337 " the port on which Livedown server will run
-nmap <F4> :LivedownToggle<CR>
+nmap <F3> :LivedownToggle<CR>
 
 " Syntatic plugin
 set statusline+=%#warningmsg#
