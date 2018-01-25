@@ -40,7 +40,6 @@ set autoread                    " auto reload changed files
 set mouse=nicr                  " enable mouse interaction
 set termencoding=utf-8          " set default encoding
 set backspace=indent,eol,start
-set spell spelllang=en_us       " set spell checking
 
 " Working with tabs
 set switchbuf=usetab
@@ -48,6 +47,9 @@ nnoremap <A-Left> :tabprevious<CR>
 nnoremap <A-Right> :tabnext<CR>
 nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
+
+" Toggle for spell checking
+:map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " PLUGINS SETTINGS
 
