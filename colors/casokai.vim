@@ -62,9 +62,9 @@ if has('nvim') || has('gui_running')
     hi Error           guifg=#FFAFFF guibg=#87005F
     hi Todo            guifg=#FFFFFF guibg=#080808 gui=bold
 
-    hi TabLine         guifg=#080808 guibg=#B2B2B2 gui=none
-    hi TabLineSel      guifg=#080808 guibg=#FF00B7 gui=bold
-    hi TabLineFill                   guibg=#B2B2B2
+    hi TabLine         guifg=#E8EBE9 guibg=#484848 gui=none
+    hi TabLineSel      guifg=#E8EBE9 guibg=#E52367 gui=bold
+    hi TabLineFill                   guibg=#0D0D0D gui=none
 
     hi Search          guifg=#FFFFFF guibg=#FF5F00
 

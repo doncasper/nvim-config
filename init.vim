@@ -11,12 +11,15 @@ Plug 'godoctor/godoctor.vim'                                          " Golang r
 Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
 Plug 'vim-syntastic/syntastic',                                       " Syntax checking
-Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplite plugin
+Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
 Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
 Plug 'tpope/vim-markdown',          { 'for': 'markdown' }             " Markdown plugin
 Plug 'shime/vim-livedown',          { 'for': 'markdown' }             " Markdown preview plugin
 Plug 'SirVer/ultisnips'                                               " Snipets plugin
 Plug 'Townk/vim-autoclose'                                            " Autoclose braces
+Plug 'cespare/vim-toml'                                               " TOML plugin
+Plug 'uarun/vim-protobuf'                                             " Syntax highlighting for Google's Protocol Buffers
+Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 
 " Initialize plugin system
 call plug#end()
@@ -37,6 +40,14 @@ set autoread                    " auto reload changed files
 set mouse=nicr                  " enable mouse interaction
 set termencoding=utf-8          " set default encoding
 set backspace=indent,eol,start
+set spell spelllang=en_us       " set spell checking
+
+" Working with tabs
+set switchbuf=usetab
+nnoremap <A-Left> :tabprevious<CR>
+nnoremap <A-Right> :tabnext<CR>
+nnoremap <silent> <C-A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 
 " PLUGINS SETTINGS
 
@@ -101,7 +112,11 @@ autocmd FileType js source ~/.config/nvim/configs/javascript.vim
 autocmd FileType json source ~/.config/nvim/configs/json.vim
 
 " Include config file for YAML
-autocmd FileType yml source ~/.config/nvim/configs/yaml.vim
+autocmd FileType yml,yaml source ~/.config/nvim/configs/yaml.vim
+
+" Include config file for TOML
+autocmd FileType toml source ~/.config/nvim/configs/toml.vim
+
 
 " MANUAL COMMANDS
 " Pretify JSON
