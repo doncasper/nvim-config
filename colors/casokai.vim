@@ -30,6 +30,7 @@ if has('nvim') || has('gui_running')
 
     hi Identifier      guifg=#FE9720
     hi Function        guifg=#5FFF00
+    hi Method          guifg=#5FD7FF
 
     hi Statement       guifg=#e52267               gui=bold
     hi Conditional     guifg=#e52267               gui=bold
