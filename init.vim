@@ -19,6 +19,7 @@ Plug 'SirVer/ultisnips'                                               " Snipets 
 Plug 'Townk/vim-autoclose'                                            " Autoclose braces
 Plug 'cespare/vim-toml'                                               " TOML plugin
 Plug 'uarun/vim-protobuf'                                             " Syntax highlighting for Google's Protocol Buffers
+Plug 'jparise/vim-graphql'                                            " Plugin that provides GraphQL file detection, syntax highlighting, and indentatio/n
 Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 
 " Initialize plugin system
