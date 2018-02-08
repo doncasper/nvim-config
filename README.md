@@ -11,6 +11,7 @@ Plugins
 * [fatih/vim-go](https://github.com/fatih/vim-go)
 * [jodosha/vim-godebug](https://github.com/jodosha/vim-godebug)
 * [godoctor/godoctor.vim](https://github.com/godoctor/godoctor.vim)
+* [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 * [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-syntastic/syntastic](https://github.com/vim-syntastic/syntastic)
 * [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim)
@@ -19,6 +20,10 @@ Plugins
 * [shime/vim-livedown](https://github.com/shime/vim-livedown)
 * [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
 * [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
+* [cespare/vim-toml](https://github.com/cespare/vim-toml)
+* [uarun/vim-protobuf](https://github.com/uarun/vim-protobuf)
+* [jparise/vim-graphql](https://github.com/jparise/vim-graphql)
+* [airblade/vim-rooter](https://github.com/airblade/vim-rooter)
 
 Installation to macOS
 ------------
@@ -32,6 +37,13 @@ Installation to macOS
 $ brew install python3
 
 $ pip3 install neovim
+```
+
+### Install vim-plug
+
+```
+$ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 ### Get config
