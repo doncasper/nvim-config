@@ -21,6 +21,7 @@ Plug 'cespare/vim-toml'                                               " TOML plu
 Plug 'uarun/vim-protobuf'                                             " Syntax highlighting for Google's Protocol Buffers
 Plug 'jparise/vim-graphql'                                            " Plugin that provides GraphQL file detection, syntax highlighting, and indentatio/n
 Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
+Plug 'ekalinin/Dockerfile.vim'                                        " Vim syntax file for Docker's Dockerfile
 
 " Initialize plugin system
 call plug#end()
@@ -68,9 +69,12 @@ set undofile"
 let g:deoplete#enable_at_startup = 1
 
 " NERDTree plugin
+nmap <F8> :NERDTreeToggle<CR>
+
+let NERDTreeShowHidden=0
+
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-nmap <F8> :NERDTreeToggle<CR>
 
 " UndoTree plugin
 nmap <F9> :UndotreeToggle<CR>

@@ -24,6 +24,7 @@ Plugins
 * [uarun/vim-protobuf](https://github.com/uarun/vim-protobuf)
 * [jparise/vim-graphql](https://github.com/jparise/vim-graphql)
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter)
+* [ekalinin/Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim)
 
 Installation to macOS
 ------------
