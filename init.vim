@@ -5,6 +5,7 @@ Plug 'vim-airline/vim-airline',                                       " Status l
 Plug 'scrooloose/nerdtree',         { 'on':  'NERDTreeToggle' }       " File manager
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }       " NERDTree git icons
 Plug 'mbbill/undotree'                                                " Local history
+Plug 'mdempsky/gocode',             { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
 Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
 Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
@@ -26,6 +27,8 @@ Plug 'ekalinin/Dockerfile.vim'                                        " Vim synt
 " Initialize plugin system
 call plug#end()
 
+let g:python_host_prog = '/Users/doncasper/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/doncasper/.pyenv/versions/neovim3/bin/python'
 
 " DEFAULT SETTINGS
 colorscheme casokai             " enable custom color shceme
@@ -42,6 +45,7 @@ set autoread                    " auto reload changed files
 set mouse=nicr                  " enable mouse interaction
 set termencoding=utf-8          " set default encoding
 set backspace=indent,eol,start
+set lazyredraw
 
 " Working with tabs
 set switchbuf=usetab
@@ -54,6 +58,7 @@ nnoremap <silent> <C-A-Right> :execute 'silent! tabmove ' . (tabpagenr()+1)<CR>
 :map <F5> :setlocal spell! spelllang=en_us<CR>
 
 " PLUGINS SETTINGS
+
 
 " Let's save undo info!
 if !isdirectory($HOME."/.local/share/nvim/undo-dir")
@@ -72,6 +77,7 @@ let g:deoplete#enable_at_startup = 1
 nmap <F8> :NERDTreeToggle<CR>
 
 let NERDTreeShowHidden=0
+let g:NERDTreeShowIgnoredStatus = 1
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -128,3 +134,4 @@ autocmd FileType toml source ~/.config/nvim/configs/toml.vim
 " MANUAL COMMANDS
 " Pretify JSON
 com! FormatJSON %!python -m json.tool
+
