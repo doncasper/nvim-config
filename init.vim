@@ -2,6 +2,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " On-demand loading
 Plug 'vim-airline/vim-airline',                                       " Status line
+Plug 'jeetsukumaran/vim-buffergator',                                 " Buffer manager
 Plug 'scrooloose/nerdtree',         { 'on':  'NERDTreeToggle' }       " File manager
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }       " NERDTree git icons
 Plug 'mbbill/undotree'                                                " Local history
@@ -11,6 +12,7 @@ Plug 'jodosha/vim-godebug',                                           " Golang d
 Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
 Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
+Plug 'tpope/vim-fugitive',                                            " Git plugin
 Plug 'vim-syntastic/syntastic',                                       " Syntax checking
 Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
 Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
@@ -27,8 +29,8 @@ Plug 'ekalinin/Dockerfile.vim'                                        " Vim synt
 " Initialize plugin system
 call plug#end()
 
-let g:python_host_prog = '/Users/doncasper/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/Users/doncasper/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " DEFAULT SETTINGS
 colorscheme casokai             " enable custom color shceme
@@ -130,6 +132,8 @@ autocmd FileType yml,yaml source ~/.config/nvim/configs/yaml.vim
 " Include config file for TOML
 autocmd FileType toml source ~/.config/nvim/configs/toml.vim
 
+" Include config file for PROTO
+autocmd FileType proto source ~/.config/nvim/configs/proto.vim
 
 " MANUAL COMMANDS
 " Pretify JSON
