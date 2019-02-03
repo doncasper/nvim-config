@@ -82,8 +82,8 @@ if has('nvim') || has('gui_running')
     hi Cursor          guifg=#000000 guibg=#5FD7FF
     hi iCursor         guifg=#000000 guibg=#5FD7FF
     hi DiffAdd         guifg=#005000 guibg=#005000
-    hi DiffChange      guifg=#13354A guibg=#13354A
-    hi DiffDelete      guifg=#650000 guibg=#650000
+    hi DiffChange      guifg=#1c3a51 guibg=#1c3a51
+    hi DiffDelete      guifg=#9f2d23 guibg=#9f2d23
     hi DiffText                      guibg=#4C4745 gui=italic,bold
 
     hi Directory       guifg=#A6E22E               gui=bold
