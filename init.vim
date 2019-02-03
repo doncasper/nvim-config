@@ -112,6 +112,8 @@ let g:livedown_autorun = 0 " should markdown preview get shown automatically upo
 let g:livedown_open = 1    " should the browser window pop-up upon previewing
 let g:livedown_port = 1337 " the port on which Livedown server will run
 
+" Git plugin
+let g:gitgutter_override_sign_column_highlight = 0
 
 " LENGUAGE DEPENDS SETTINGS
 " Include config file for Golang
@@ -138,4 +140,3 @@ autocmd FileType proto source ~/.config/nvim/configs/proto.vim
 " MANUAL COMMANDS
 " Pretify JSON
 com! FormatJSON %!python -m json.tool
-
