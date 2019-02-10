@@ -81,10 +81,15 @@ if has('nvim') || has('gui_running')
 
     hi Cursor          guifg=#000000 guibg=#5FD7FF
     hi iCursor         guifg=#000000 guibg=#5FD7FF
-    hi DiffAdd         guifg=#005000 guibg=#005000
-    hi DiffChange      guifg=#1c3a51 guibg=#1c3a51
-    hi DiffDelete      guifg=#9f2d23 guibg=#9f2d23
+    hi DiffAdd                       guibg=#13354A
+    hi DiffChange      guifg=#89807D guibg=#4C4745
+    hi DiffDelete      guifg=#960050 guibg=#1E0010
     hi DiffText                      guibg=#4C4745 gui=italic,bold
+
+    " Git gutter plugin colors
+    hi GitGutterAdd    guifg=#005000 guibg=#005000
+    hi GitGutterChange guifg=#1c3a51 guibg=#1c3a51
+    hi GitGutterDelete guifg=#9f2d23 guibg=#9f2d23
 
     hi Directory       guifg=#A6E22E               gui=bold
     hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
