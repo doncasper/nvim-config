@@ -48,7 +48,6 @@ set mouse=nicr                  " enable mouse interaction
 set termencoding=utf-8          " set default encoding
 set backspace=indent,eol,start
 set lazyredraw
-set timeoutlen=100
 
 " Working with tabs
 set switchbuf=usetab
