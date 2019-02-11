@@ -22,7 +22,7 @@ Plug 'SirVer/ultisnips'                                               " Snipets 
 Plug 'Townk/vim-autoclose'                                            " Autoclose braces
 Plug 'cespare/vim-toml'                                               " TOML plugin
 Plug 'uarun/vim-protobuf'                                             " Syntax highlighting for Google's Protocol Buffers
-Plug 'jparise/vim-graphql'                                            " Plugin that provides GraphQL file detection, syntax highlighting, and indentatio/n
+Plug 'jparise/vim-graphql'                                            " Plugin that provides GraphQL file detection, syntax highlighting, and indentation
 Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 Plug 'ekalinin/Dockerfile.vim'                                        " Vim syntax file for Docker's Dockerfile
 
@@ -48,6 +48,7 @@ set mouse=nicr                  " enable mouse interaction
 set termencoding=utf-8          " set default encoding
 set backspace=indent,eol,start
 set lazyredraw
+set timeoutlen=100
 
 " Working with tabs
 set switchbuf=usetab
@@ -78,7 +79,7 @@ let g:deoplete#enable_at_startup = 1
 " NERDTree plugin
 nmap <F8> :NERDTreeToggle<CR>
 
-let NERDTreeShowHidden=0
+let g:NERDTreeShowHidden=0
 let g:NERDTreeShowIgnoredStatus = 1
 
 " close vim if the only window left open is a NERDTree
