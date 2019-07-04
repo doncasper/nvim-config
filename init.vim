@@ -1,36 +1,42 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
-" On-demand loading
+" Main plugins
+Plug 'Townk/vim-autoclose'                                            " Autoclose braces
 Plug 'vim-airline/vim-airline',                                       " Status line
 Plug 'jeetsukumaran/vim-buffergator',                                 " Buffer manager
 Plug 'scrooloose/nerdtree',         { 'on':  'NERDTreeToggle' }       " File manager
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }       " NERDTree git icons
+Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 Plug 'mbbill/undotree'                                                " Local history
-Plug 'mdempsky/gocode',             { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
-Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
-Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
-Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
-Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
 Plug 'tpope/vim-fugitive',                                            " Git plugin
 Plug 'vim-syntastic/syntastic',                                       " Syntax checking
-Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
-Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
-Plug 'tpope/vim-markdown',          { 'for': 'markdown' }             " Markdown plugin
-Plug 'shime/vim-livedown',          { 'for': 'markdown' }             " Markdown preview plugin
+Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
+
+" Golang plugins
+Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
+" Plug 'mdempsky/gocode',             { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
+" Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
+" Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
+" Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
+" Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
+
 Plug 'SirVer/ultisnips'                                               " Snipets plugin
-Plug 'Townk/vim-autoclose'                                            " Autoclose braces
-Plug 'cespare/vim-toml'                                               " TOML plugin
-Plug 'uarun/vim-protobuf'                                             " Syntax highlighting for Google's Protocol Buffers
-Plug 'jparise/vim-graphql'                                            " Plugin that provides GraphQL file detection, syntax highlighting, and indentation
-Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
-Plug 'ekalinin/Dockerfile.vim'                                        " Vim syntax file for Docker's Dockerfile
+
+" Syntax higlighting
+" TODO: Check if it working in LSP.
+" Plug 'tpope/vim-markdown',          { 'for': 'markdown' }             " Markdown plugin
+Plug 'shime/vim-livedown',          { 'for': 'markdown' }             " Markdown preview plugin
+" Plug 'cespare/vim-toml'                                               " TOML plugin
+" Plug 'uarun/vim-protobuf'                                             " Protobuf plugin
+" Plug 'jparise/vim-graphql'                                            " GraphQL plugin
+" Plug 'ekalinin/Dockerfile.vim'                                        " Dockerfile plugin
 
 " Initialize plugin system
 call plug#end()
 
-let g:python_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " DEFAULT SETTINGS
 colorscheme casokai             " enable custom color shceme
@@ -136,6 +142,9 @@ autocmd FileType toml source ~/.config/nvim/configs/toml.vim
 
 " Include config file for PROTO
 autocmd FileType proto source ~/.config/nvim/configs/proto.vim
+
+" Enable syntax for conf file
+autocmd BufRead,BufNewFile *.conf setf dosini
 
 " MANUAL COMMANDS
 " Pretify JSON
