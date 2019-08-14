@@ -25,6 +25,7 @@ Plug 'uarun/vim-protobuf'                                             " Syntax h
 Plug 'jparise/vim-graphql'                                            " Plugin that provides GraphQL file detection, syntax highlighting, and indentation
 Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 Plug 'ekalinin/Dockerfile.vim'                                        " Vim syntax file for Docker's Dockerfile
+Plug 'martinda/Jenkinsfile-vim-syntax'                                " Vim syntax file for Jenkinsfile
 
 " Initialize plugin system
 call plug#end()
