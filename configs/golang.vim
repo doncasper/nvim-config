@@ -33,4 +33,4 @@ nmap <Leader>e <Plug>(go-rename)
 nmap gl :GoReferrers<CR>
 
 " Syntastic linters
-let g:syntastic_go_checkers = ['govet', 'errcheck', 'go', 'golint']
+let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
