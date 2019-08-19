@@ -18,8 +18,8 @@ Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang p
 " Plug 'mdempsky/gocode',             { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
 " Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
 " Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
-" Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
-" Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
+Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
+Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
 
 Plug 'SirVer/ultisnips'                                               " Snipets plugin
 
@@ -35,8 +35,8 @@ Plug 'shime/vim-livedown',          { 'for': 'markdown' }             " Markdown
 " Initialize plugin system
 call plug#end()
 
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " DEFAULT SETTINGS
 colorscheme casokai             " enable custom color shceme
