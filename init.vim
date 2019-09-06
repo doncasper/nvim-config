@@ -120,6 +120,9 @@ let g:gitgutter_override_sign_column_highlight = 0
 " Include config file for Golang
 autocmd FileType go source ~/.config/nvim/configs/golang.vim
 
+" Include config file for Golang
+autocmd FileType py source ~/.config/nvim/configs/python.vim
+
 " Include config file for HTML and CSS
 autocmd FileType html,css source ~/.config/nvim/configs/htmlcss.vim
 
