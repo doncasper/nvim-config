@@ -21,6 +21,9 @@ let g:go_addtags_transform = "snakecase"
 
 let g:go_info_mode='gopls'
 let g:go_def_mode='gopls'
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
 let g:go_auto_type_info = 1
 let g:go_updatetime = 200
 let g:go_auto_sameids = 1
