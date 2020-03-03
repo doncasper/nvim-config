@@ -16,11 +16,8 @@ Plug 'ctrlpvim/ctrlp.vim'                                             " Full pat
 " Golang plugins
 Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
 Plug 'neoclide/coc.nvim',           {'do': 'yarn install --frozen-lockfile'} " LSP
-" Plug 'mdempsky/gocode',             { 'rtp': 'nvim', 'do': '~/.local/share/nvim/plugged/gocode/nvim/symlink.sh' }
-" Plug 'jodosha/vim-godebug',                                           " Golang debug plugin
-" Plug 'godoctor/godoctor.vim'                                          " Golang refactoring tools
-Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
-Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
+"#Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
+"Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
 
 Plug 'SirVer/ultisnips'                                               " Snipets plugin
 
@@ -28,6 +25,7 @@ Plug 'SirVer/ultisnips'                                               " Snipets 
 " TODO: Check if it working in LSP.
 " Plug 'tpope/vim-markdown',          { 'for': 'markdown' }             " Markdown plugin
 Plug 'shime/vim-livedown',          { 'for': 'markdown' }             " Markdown preview plugin
+Plug 'martinda/Jenkinsfile-vim-syntax'
 " Plug 'cespare/vim-toml'                                               " TOML plugin
 " Plug 'uarun/vim-protobuf'                                             " Protobuf plugin
 " Plug 'jparise/vim-graphql'                                            " GraphQL plugin
