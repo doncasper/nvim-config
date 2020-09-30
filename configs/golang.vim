@@ -19,7 +19,14 @@ let g:go_term_enabled = 1
 let g:go_list_type = "quickfix"
 let g:go_addtags_transform = "snakecase"
 
-let g:go_info_mode="gocode"
+let g:go_info_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+let g:go_referrers_mode = 'gopls'
+let g:go_def_mode = 'gopls'
+let g:go_rename_command = 'gopls'
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
 let g:go_auto_type_info = 1
 let g:go_updatetime = 200
 let g:go_auto_sameids = 1
@@ -33,4 +40,5 @@ nmap <Leader>e <Plug>(go-rename)
 nmap gl :GoReferrers<CR>
 
 " Syntastic linters
-let g:syntastic_go_checkers = ['govet', 'errcheck', 'go']
+" let g:syntastic_go_checkers = ['govet', 'errcheck', 'go', 'golint']
+let g:syntastic_go_checkers = ['go', 'govet']
