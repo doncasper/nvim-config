@@ -4,8 +4,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'Townk/vim-autoclose'                                            " Autoclose braces
 Plug 'vim-airline/vim-airline',                                       " Status line
 Plug 'jeetsukumaran/vim-buffergator',                                 " Buffer manager
-Plug 'scrooloose/nerdtree',         { 'on':  'NERDTreeToggle' }       " File manager
+Plug 'preservim/nerdtree',                                            " File manager
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }       " NERDTree git icons
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 Plug 'mbbill/undotree'                                                " Local history
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
@@ -14,22 +16,13 @@ Plug 'vim-syntastic/syntastic',                                       " Syntax c
 Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
 
 " Golang plugins
-Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }    " Golang plugin
+Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }           " Golang plugin
 Plug 'neoclide/coc.nvim',           {'do': 'yarn install --frozen-lockfile'} " LSP
-"#Plug 'Shougo/deoplete.nvim',        { 'do': ':UpdateRemotePlugins' }  " Autocomplete plugin
-"Plug 'zchee/deoplete-go',           { 'build': {'unix': 'make'} }     " Autocomplete for golang
-
-Plug 'SirVer/ultisnips'                                               " Snipets plugin
+Plug 'SirVer/ultisnips'                                                      " Snipets plugin
 
 " Syntax higlighting
-" TODO: Check if it working in LSP.
-" Plug 'tpope/vim-markdown',          { 'for': 'markdown' }             " Markdown plugin
-Plug 'shime/vim-livedown',          { 'for': 'markdown' }             " Markdown preview plugin
-Plug 'martinda/Jenkinsfile-vim-syntax'
-" Plug 'cespare/vim-toml'                                               " TOML plugin
-" Plug 'uarun/vim-protobuf'                                             " Protobuf plugin
-" Plug 'jparise/vim-graphql'                                            " GraphQL plugin
-" Plug 'ekalinin/Dockerfile.vim'                                        " Dockerfile plugin
+Plug 'shime/vim-livedown',          { 'for': 'markdown' } " Markdown preview plugin
+Plug 'martinda/Jenkinsfile-vim-syntax'                    " Jenkinsfile syntax higlighting
 
 " Initialize plugin system
 call plug#end()
@@ -83,8 +76,55 @@ let g:deoplete#enable_at_startup = 1
 " NERDTree plugin
 nmap <F8> :NERDTreeToggle<CR>
 
-let g:NERDTreeShowHidden=0
-let g:NERDTreeShowIgnoredStatus = 1
+" NERDTree git plugin
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+	\ 'Modified'  :'●',
+	\ 'Staged'    :'✚',
+	\ 'Untracked' :'⚉',
+	\ 'Renamed'   :'➜',
+	\ 'Unmerged'  :'═',
+	\ 'Deleted'   :'✖',
+	\ 'Dirty'     :'◆',
+	\ 'Ignored'   :'⚬',
+	\ 'Clean'     :'✔︎',
+	\ 'Unknown'   :'?',
+	\ }
+let g:NERDTreeShowHidden = 0
+let g:NERDTreeGitStatusShowIgnored = 1
+let g:NERDTreeGitStatusUntrackedFilesMode = 'normal'
+let g:NERDTreeGitStatusShowClean = 0
+let g:NERDTreeGitStatusDirDirtyOnly = 0
+
+let g:NERDTreeDirArrowExpandable = '' " default: '▸'
+let g:NERDTreeDirArrowCollapsible = '' " default: '▾'
+
+let g:WebDevIconsOS = 'Darwin'
+
+" you can add these colors to your .vimrc to help customizing
+let s:brown = "905532"
+let s:aqua =  "3AFFDB"
+let s:blue = "4ADAF7"
+let s:darkBlue = "44788E"
+let s:purple = "834F79"
+let s:lightPurple = "834F79"
+let s:red = "AE403F"
+let s:beige = "F5C06F"
+let s:yellow = "F09F17"
+let s:orange = "D4843E"
+let s:darkOrange = "F16529"
+let s:pink = "CB6F6F"
+let s:salmon = "EE6E73"
+let s:green = "8FAA54"
+let s:lightGreen = "31B53E"
+let s:white = "FFFFFF"
+let s:rspec_red = 'FE405F'
+let s:git_orange = 'F54D27'
+
+let g:NERDTreeExtensionHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExtensionHighlightColor['go'] = s:blue " sets the color of go files to blue
+
+let g:NERDTreeExactMatchHighlightColor = {} " this line is needed to avoid error
+let g:NERDTreeExactMatchHighlightColor['.gitignore'] = s:git_orange " sets the color for .gitignore files
 
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -202,6 +242,9 @@ autocmd FileType js source ~/.config/nvim/configs/javascript.vim
 " Include config file for JSON
 autocmd FileType json source ~/.config/nvim/configs/json.vim
 
+" Include config file for Shell
+autocmd FileType sh source ~/.config/nvim/configs/shell.vim
+
 " Include config file for YAML
 autocmd FileType yml,yaml source ~/.config/nvim/configs/yaml.vim
 
@@ -216,4 +259,4 @@ autocmd BufRead,BufNewFile *.conf setf dosini
 
 " MANUAL COMMANDS
 " Pretify JSON
-com! FormatJSON %!python -m json.tool
+com! FormatJSON %!jq .
