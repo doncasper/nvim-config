@@ -5,30 +5,30 @@ Plug 'Townk/vim-autoclose'                                            " Autoclos
 Plug 'vim-airline/vim-airline',                                       " Status line
 Plug 'jeetsukumaran/vim-buffergator',                                 " Buffer manager
 Plug 'preservim/nerdtree',                                            " File manager
-Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }       " NERDTree git icons
-Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
+Plug 'Xuyuanp/nerdtree-git-plugin', {'on':  'NERDTreeToggle'}         " NERDTree git icons
+Plug 'ryanoasis/vim-devicons'                                         " Nice icons for plugins like NERDTree, vim-airline etc.
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                        " NERDTree colors highlights
 Plug 'mbbill/undotree'                                                " Local history
+Plug 'airblade/vim-rooter'                                            " Changes Vim working directory to project root
 Plug 'airblade/vim-gitgutter',                                        " Git plugin
 Plug 'tpope/vim-fugitive',                                            " Git plugin
 Plug 'vim-syntastic/syntastic',                                       " Syntax checking
 Plug 'ctrlpvim/ctrlp.vim'                                             " Full path fuzzy file, buffer, mru, tag... finder for Vim
 
 " Golang plugins
-Plug 'fatih/vim-go',                { 'do': ':GoInstallBinaries' }           " Golang plugin
-Plug 'neoclide/coc.nvim',           {'do': 'yarn install --frozen-lockfile'} " LSP
-Plug 'SirVer/ultisnips'                                                      " Snipets plugin
+Plug 'fatih/vim-go',       {'do': ':GoInstallBinaries'}               " Golang plugin
+Plug 'neoclide/coc.nvim',  {'do': 'yarn install --frozen-lockfile'}   " LSP manager
+Plug 'SirVer/ultisnips'                                               " Snipets plugin
 
 " Syntax higlighting
-Plug 'shime/vim-livedown',          { 'for': 'markdown' } " Markdown preview plugin
-Plug 'martinda/Jenkinsfile-vim-syntax'                    " Jenkinsfile syntax higlighting
+Plug 'shime/vim-livedown',             {'for': 'markdown'}            " Markdown preview plugin
+Plug 'martinda/Jenkinsfile-vim-syntax'                                " Jenkinsfile syntax higlighting
 
 " Initialize plugin system
 call plug#end()
 
-let g:python_host_prog = '/usr/local/bin/python2'
-let g:python3_host_prog = '/usr/local/bin/python3'
+"let g:python_host_prog = '/usr/local/bin/python2'
+"let g:python3_host_prog = '/usr/local/bin/python3'
 
 " DEFAULT SETTINGS
 colorscheme casokai             " enable custom color shceme
@@ -157,6 +157,8 @@ let g:livedown_autorun = 0 " should markdown preview get shown automatically upo
 let g:livedown_open = 1    " should the browser window pop-up upon previewing
 let g:livedown_port = 1337 " the port on which Livedown server will run
 
+" Restart go language server
+nmap <F12> :call go#lsp#Restart()<CR>
 
 " -------------------------------------------------------------------------------------------------
 " coc.nvim default settings

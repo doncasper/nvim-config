@@ -4,34 +4,38 @@ Neovim config
 Plugins
 -------
 
-* [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
-* [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
-* [Xuyuanp/nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-* [mbbill/undotree](https://github.com/mbbill/undotree)
-* [fatih/vim-go](https://github.com/fatih/vim-go)
-* [jodosha/vim-godebug](https://github.com/jodosha/vim-godebug)
-* [godoctor/godoctor.vim](https://github.com/godoctor/godoctor.vim)
-* [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
-* [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-* [vim-syntastic/syntastic](https://github.com/vim-syntastic/syntastic)
-* [Shougo/deoplete.nvim](https://github.com/Shougo/deoplete.nvim)
-* [zchee/deoplete-go](https://github.com/zchee/deoplete-go)
-* [tpope/vim-markdown](https://github.com/tpope/vim-markdown)
-* [shime/vim-livedown](https://github.com/shime/vim-livedown)
-* [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
+### Main plugins
+
 * [Townk/vim-autoclose](https://github.com/Townk/vim-autoclose)
-* [cespare/vim-toml](https://github.com/cespare/vim-toml)
-* [uarun/vim-protobuf](https://github.com/uarun/vim-protobuf)
-* [jparise/vim-graphql](https://github.com/jparise/vim-graphql)
+* [vim-airline/vim-airline](https://github.com/vim-airline/vim-airline)
+* [jeetsukumaran/vim-buffergator](https://github.com/jeetsukumaran/vim-buffergator)
+* [preservim/nerdtree](https://github.com/preservim/nerdtree)
+* [Xuyuanp/nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
+* [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)
+* [tiagofumo/vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight)
+* [mbbill/undotree](https://github.com/mbbill/undotree)
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter)
-* [ekalinin/Dockerfile.vim](https://github.com/ekalinin/Dockerfile.vim)
+* [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-syntastic/syntastic](https://github.com/vim-syntastic/syntastic)
+* [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
+
+### Golang plugins
+
+* [fatih/vim-go](https://github.com/fatih/vim-go)
+* [neoclide/coc.nvim](https://github.com/neoclide/coc.nvim)
+* [SirVer/ultisnips](https://github.com/SirVer/ultisnips)
+
+### Other plugins
+
+* [shime/vim-livedown](https://github.com/shime/vim-livedown)
+* [martinda/Jenkinsfile-vim-syntax](https://github.com/martinda/Jenkinsfile-vim-syntax)
 
 Installation to macOS
 ------------
 
 ### Install Neovim
 
-* `deoplete` requires Neovim with Python3 support("+python3").
 * `UltiSnips` requires python >= 2.7 or python3.
 
 ```sh
@@ -54,28 +58,12 @@ $ git clone https://github.com/doncasper/nvim-config ~/.config/nvim
 
 ### Plugins requirements
 
-* `jodosha/vim-godebug` required [delve](https://github.com/derekparker/delve) installed.
-
-```sh
-$ brew install go-delve/delve/delve
-```
-
-If you get error throw installing delve with brew, check [this issue](https://github.com/go-delve/homebrew-delve/issues/17).
-
 * `shime/vim-livedown`
 
 First make sure you have [node](http://nodejs.org/) with [npm](https://www.npmjs.org/) installed.
 
 ```sh
 $ npm install -g livedown
-```
-
-* `zchee/deoplete-go`
-
-You need to get the appropriate version of the gocode, for 6g/8g/5g compiler you can do this:
-
-```sh
-$ go get -u github.com/nsf/gocode
 ```
 
 ### Install plugins
